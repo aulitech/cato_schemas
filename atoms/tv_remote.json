@@ -1,10 +1,10 @@
 {
     "tv_remote" : {
         "label" : "TV Remote",
-        "description" : "Operation Loop: Tap/Double Tap",
+        "description" : "Unique TV Remote Settings",
         "value" : {
             "await_actions" : {
-                "label" : "",
+                "label" : "Await Actions",
                 "description" : "wait for previous action to end before reading a new gesture",
                 "access" : "rw",
                 "value" : true,

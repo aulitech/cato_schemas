@@ -1,12 +1,13 @@
 {
     "gesture" : {
         "label" : "Gesture Parameters",
-        "description" : "structure describing gesture collection and cutoff tools",
+        "description" : "Settings for gesture collection and recognition cutoff tools",
         "access" : "rw",
         "value" : {
             "key" : {
                 "label" : "Gesture Key",
-                "description" : "Human-readable field describing Gesture model's names of gestures - indexed",
+                "description" : "Human-readable field describing Gesture model's names of gestures",
+                "note" : "This determines text output of practice mode",
                 "access" : "r",
                 "value" : [
                     "None",
@@ -20,8 +21,8 @@
             },
             "confidence_threshold" : {
                 "label" : "Confidence threshold",
-                "description" : "threshold of gesture confidence probability [0, 1), for Cato to accept gesture and execute command",
-                "note" : "Low value -> few dry-fires, more frequent mistakes. High value -> frequent dry-fires, rare mistakes", 
+                "description" : "Threshold of gesture confidence probability [0, 1], for Cato to accept gesture and execute command",
+                "note" : "Low value -> few dry-fires, more frequent misinterpretation. High value -> frequent dry-fires, rare misinterpretation", 
                 "access" : "rw",
                 "value" : 0.62,
                 "range" : {
@@ -49,21 +50,29 @@
             },
             "idle_threshold" : {
                 "label" : "Idle threshold",
-                "description" : "Value of move speed below which is considered idle - leading to mouse exit. Low number = more stillness to idle out of mouse",
+                "description" : "Value of move speed below which is considered idle - leading to mouse exit. Low number = more stillness to idle out of gesture recognition",
                 "access" : "r",
                 "value" : 30
             },
             "timeout" : {
                 "label" : "Timeout",
-                "description" : "Maximum Time to Wait for Gesture Start before returning 'noop'",
+                "description" : "Maximum Time (seconds) to Wait for Gesture Start before exiting recognition window",
                 "access" : "rw",
-                "value" : 1.0
+                "value" : 1.0,
+                "range" : {
+                    "min" : 0.1,
+                    "max" : 3.0
+                }
             },
             "gc_timeout" : {
                 "label" : "Gesture Collection Timeout",
-                "description" : "Gesture Collection Startup Delay Timeout",
+                "description" : "Time to wait before beginning gesture collection over bluetooth",
                 "access" : "rw",
-                "value" : 10
+                "value" : 10,
+                "range" : {
+                    "min" : 5,
+                    "max" : 60
+                }
             }
         }
     }

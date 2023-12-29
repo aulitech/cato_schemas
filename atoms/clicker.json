@@ -6,7 +6,7 @@
         "value" : {
             "max_click_spacing" : {
                 "label" : "Max Click Spacing",
-                "description" : "delay after detecting a tap to wait for the next",
+                "description" : "Time (seconds) to await next tap before dispatching counted result",
                 "access" : "rw",
                 "value" : 0.45,
                 "range" : {
@@ -16,15 +16,14 @@
             },
             "tap_ths" : {
                 "label" : "Tap Threshold",
-                "description" : "Level of impact needed to trigger a click",
+                "description" : "Level of impact needed to trigger a click. Lower -> more Sensitive to impact",
                 "note" : "5 bits, takes on values 0-31. Lower -> MORE SENSITIVE",
                 "access" : "rw",
                 "value" : 11,
-                "options" : [   0,  1,  2,  3,  4,  5,  6,  7,
-                                8,  9,  10, 11, 12, 13, 14, 15,
-                                16, 17, 18, 19, 20, 21, 22, 23,
-                                24, 25, 26, 27, 28, 29, 30, 31 
-                            ]
+                "range" : {
+                    "min" : 0,
+                    "max" : 31
+                }
             },
             "quiet" : {
                 "label" : "Quiet",
@@ -32,7 +31,10 @@
                 "note" : "2-bit, 0-3",
                 "access" : "rw",
                 "value" : 2,
-                "options" : [0, 1, 2, 3]
+                "range" : {
+                    "min" : 0,
+                    "max" : 3
+                }
             },
             "shock" : {
                 "label" : "Shock",
@@ -40,7 +42,10 @@
                 "note" : "2-bit, 0-3",
                 "access" : "rw",
                 "value" : 2,
-                "options" : [0, 1, 2, 3]
+                "range" : {
+                    "min" : 0,
+                    "max" : 3
+                }
             }
         }
     }
