@@ -1,0 +1,12 @@
+{
+    "bindings" : [
+        {
+            "command" : "button_action",
+            "args" : ["tap / double_tap / press_hold", 0]
+        },
+        {
+            "command" : "jfjfjfjf",
+            "args" : null
+        }
+    ]   
+}
