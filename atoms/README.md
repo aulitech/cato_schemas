@@ -53,12 +53,8 @@ Leave the number of bindings variable, and use the "commands" section to build a
             ]
         },
         {
-            "command": "button_action",
-            "args": [
-                0,
-                "",
-                0
-            ]
+            "command": "quick_sleep",
+            "args": []
         }
     ]
 ```
